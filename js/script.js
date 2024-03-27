@@ -138,4 +138,4 @@ let stars_image = document.createElement('img');
 
 // change_enviroment();
 
-setInterval(change_enviroment, 600000);
+setInterval(change_enviroment, 60000);
