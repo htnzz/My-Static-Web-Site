@@ -1,0 +1,121 @@
+body {
+    transition: background-color, color 1s ease;
+    margin-top: 150px;
+    text-align: center;
+    font-family: "Ubuntu Mono", monospace;
+    color: rgb(255, 255, 255);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-style: normal;
+    font-weight: lighter;
+    font-size: 21px;
+}
+#content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#imageContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#content div {
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+#name {
+    font-size: 30px;
+}
+
+#status {
+    font-size: 24px;
+}
+
+#place {
+    font-size: 22px;
+}
+
+#contacts {
+    font-size: 22px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+ul li {
+    display: inline-block;
+    padding: 10px 10px 50px;
+}
+
+#gh_icon, #tg_icon {
+    filter: none;
+    transition: filter 1s ease;
+    height: 32px;
+    width: 32px;
+}
+
+#ground {
+    transition: filter 1s ease;
+    filter: none;
+}
+
+#moon_and_sun_container img {
+    transition: all 1s ease-in-out;
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    z-index: -2;
+}
+
+#stars_container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -3;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#stars {
+    transition: opacity 1s ease;
+    opacity: 0;
+}
+
+#fake_bg_cntnr {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#fake_bg {
+    transition: opacity 1s ease;
+    opacity: 1;
+}
+
+
+
