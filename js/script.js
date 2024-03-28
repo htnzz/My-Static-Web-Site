@@ -16,7 +16,7 @@ function getTimeOfDay() {
     if (hour >= 6 && hour < 12) {
         return 'morning';
     } else if (hour >= 12 && hour < 18) {
-        return 'afternoon';
+        return 'night';
     } else if (hour >= 18 && hour < 23) {
         return 'evening';
     } else {
@@ -118,24 +118,39 @@ function change_enviroment() {
     document.body.style.backgroundColor = backgroundColor;
     document.getElementById('ground').style.filter = 'brightness(' + ground_brightness + ')';
 }
-let imageElement = document.createElement('img');
-    imageElement.setAttribute('src', '../images/sprites/ground.png');
-    imageElement.setAttribute('id', 'ground');
-    document.getElementById('imageContainer').appendChild(imageElement);
 
-let sun_image = document.createElement('img');
-    sun_image.setAttribute('src', '../images/sprites/sun.png');
-    sun_image.setAttribute('id', 'sun');
-    document.getElementById('moon_and_sun_container').appendChild(sun_image)
-let moon_image = document.createElement('img');
-    moon_image.setAttribute('src', '../images/sprites/moon.png');
-    moon_image.setAttribute('id', 'moon');
-    document.getElementById('moon_and_sun_container').appendChild(moon_image)
+const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+if (!isMobile) {
+    let imageElement = document.createElement('img');
+        imageElement.setAttribute('src', '../images/sprites/ground.png');
+        imageElement.setAttribute('id', 'ground');
+        document.getElementById('imageContainer').appendChild(imageElement);
+
+    let sun_image = document.createElement('img');
+        sun_image.setAttribute('src', '../images/sprites/sun.png');
+        sun_image.setAttribute('id', 'sun');
+        document.getElementById('moon_and_sun_container').appendChild(sun_image)
+    let moon_image = document.createElement('img');
+        moon_image.setAttribute('src', '../images/sprites/moon.png');
+        moon_image.setAttribute('id', 'moon');
+        document.getElementById('moon_and_sun_container').appendChild(moon_image)
+} else {
+    let imageElement = document.createElement('img');
+        imageElement.setAttribute('id', 'ground');
+        document.getElementById('imageContainer').appendChild(imageElement);
+
+    let sun_image = document.createElement('img');
+        sun_image.setAttribute('id', 'sun');
+        document.getElementById('moon_and_sun_container').appendChild(sun_image)
+    let moon_image = document.createElement('img');
+        moon_image.setAttribute('id', 'moon');
+        document.getElementById('moon_and_sun_container').appendChild(moon_image)
+}
+
 let stars_image = document.createElement('img');
     stars_image.setAttribute('src', '../images/sprites/stars.png');
     stars_image.setAttribute('id', 'stars');
     document.getElementById('stars_container').appendChild(stars_image);
 
-// change_enviroment();
 
 setInterval(change_enviroment, 60000);

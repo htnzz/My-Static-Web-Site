@@ -4,6 +4,7 @@ body {
     text-align: center;
     font-family: "Ubuntu Mono", monospace;
     color: rgb(255, 255, 255);
+    overflow: hidden;
 }
 
 * {
@@ -30,7 +31,7 @@ body {
     background-repeat: no-repeat;
 }
 
-#content div {
+.main_block {
     margin-bottom: 10px;
     padding: 10px;
 }
@@ -73,6 +74,10 @@ ul li {
 #ground {
     transition: filter 1s ease;
     filter: none;
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+    margin: 0;
 }
 
 #moon_and_sun_container img {
@@ -93,6 +98,7 @@ ul li {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    padding: 0;
 }
 
 #stars {
